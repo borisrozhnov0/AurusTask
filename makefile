@@ -24,6 +24,9 @@ $(OBJECTS_DIR)/main.o: main.cpp
 $(OBJECTS_DIR)/%.o: $(SOURCES_DIR)/%.cpp | $(OBJECTS_DIR)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(INCLUDE_DIR) -c $< -o $@ 
 
+$(OBJECTS_DIR): 
+	mkdir -p $(OBJECTS_DIR)
+
 .PHONY: clean
 
 clean:
